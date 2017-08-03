@@ -47,6 +47,30 @@
             margin-left: 10%;
             margin-bottom: 12px;
         }
+        
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            right: 30px;
+            border: 1px solid #cccccc;
+            outline: none;
+            background-color: white;
+            z-index: 99;
+            color: #8c8c8c;
+            cursor: pointer;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-left: 8px;
+            padding-right: 8px;
+            font-size: 15px;
+            font-family: monospace;
+            line-height: 1;
+        }
+        
+        #myBtn:hover {
+            background-color: #ffffff;
+        }
     </style>
 
     <meta charset="utf-8">
@@ -78,6 +102,9 @@
 </head>
 
 <body>
+
+    <button onclick="topFunction()" id="myBtn" title="Go Up">^
+        <br>TOP</button>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -2866,6 +2893,28 @@
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
 
 </body>
 
